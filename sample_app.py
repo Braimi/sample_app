@@ -1,12 +1,12 @@
 from flask import Flask
-from flask import request
 from flask import render_template
+import datetime
 
-sample = Flask(__name__)
+microweb_app = Flask(__name__)
 
-@sample.route("/")
+@microweb_app.route("/")
 def main():
-    return render_template("index.html")
+    return render_template("index.html" , datetime_now = datetime.datetime.now())
 
 if __name__ == "__main__":
-    sample.run(host="0.0.0.0", port=5050)
+    microweb_app.run(host="0.0.0.0", port=5555)
